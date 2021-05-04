@@ -1,0 +1,45 @@
+body{
+    background-color: rgb(239, 250, 252);
+   width: 100%;
+   overflow-x: hidden;
+
+}
+.navbar-light{
+    background-color: rgb(239, 250, 252) !important;
+
+}
+.name{
+    font-size: x-large;
+}
+.link-light{
+    color: black !important;
+}
+
+.link:hover,.link-light:hover{
+    text-decoration: none;
+}
+.link{
+    font-size: 1.5em;
+}
+
+.search{
+  color: azure;
+}
+
+.staf{
+    
+    background-image: linear-gradient(to bottom, rgba(149, 149, 153, 0.562), rgba(252, 248, 252, 0.164)),url("https://5.imimg.com/data5/GQ/FP/MY-26802338/online-shopping-system-500x500.jpg") ;
+    width: 90vw;
+    background-size: cover;
+    margin-left: auto;
+    margin-right: auto;
+    height: 40vh;
+}
+.it{
+    color: rgb(248, 202, 94);
+}
+.buy{
+   color: blue;
+   font-size: 2em;
+   font-weight: 500;
+}
