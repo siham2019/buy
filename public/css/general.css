@@ -15,7 +15,9 @@ body{
  
 }
 
-
+.bg-info{
+    background-color: rgb(94, 223, 223) !important;
+}
 
 ul{
   list-style-type: none;

@@ -2,7 +2,7 @@
 
 
 @section('content')
-     
+     @include('layout.search')
           <div class="d-flex justify-content-center mt-4 mb-5">
 
                <a href="" class="border-bottom border-primary mr-3 pb-2 link">featured</a>

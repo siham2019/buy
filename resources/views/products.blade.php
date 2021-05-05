@@ -3,6 +3,8 @@
 
 @section('content')
     
+    @include('layout.search')
+
      <div class="container">
         <div class=" mt-4 ">
             <div>
@@ -44,6 +46,7 @@
           
             </ul>
             <div>
+                
                 <div class="d-flex justify-content-between">
                     <h4 class="py-4 ">{{strtoupper ($category)}}</h4>
                     <div class="d-flex category">

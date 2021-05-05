@@ -19,7 +19,10 @@ Route::get('/', function () {
 });
 
 
+Route::get('/products/{product}', function ($product) {
+    return view('product',["product"=>$product]);
 
+})->name("products.detail");
 
 Route::get('/products', function (Request $category) {
     return view('products',["category"=>$category->query('category')]);
