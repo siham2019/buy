@@ -12,7 +12,7 @@
           
          @include('layout.product')
         <div class="text-center">
-          <button class="btn btn-info mb-5">view more products</button>
+          <a  href="{{route('products.category',['category'=>'all'])}}" class="btn btn-info mb-5">view more products</a>
         </div>
         
 @endsection
