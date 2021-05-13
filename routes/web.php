@@ -24,6 +24,23 @@ Route::get('/products/{product}', function ($product) {
 
 })->name("products.detail");
 
+
+
+Route::get('/checkout', function () {
+  
+    return view('checkout');
+
+})->name("checkout");
+
+
+Route::get('/cart', function () {
+  
+    return view('cart');
+
+})->name("cart");
+
+
+
 Route::get('/products', function (Request $category) {
     return view('products',["category"=>$category->query('category')]);
 })->name('products.category');

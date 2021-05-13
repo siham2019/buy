@@ -15,6 +15,11 @@ body{
  
 }
 
+.prod{
+    width:200px;
+    height: 100px;
+}
+
 .bg-info{
     background-color: rgb(94, 223, 223) !important;
 }
