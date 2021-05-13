@@ -24,6 +24,17 @@ Route::get('/products/{product}', function ($product) {
 
 })->name("products.detail");
 
+Route::get('/login', function () {
+  
+    return view('login');
+
+})->name("login");
+
+Route::get('/register', function () {
+  
+    return view('register');
+
+})->name("register");
 
 
 Route::get('/checkout', function () {
