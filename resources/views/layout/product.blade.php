@@ -2,30 +2,20 @@
     <div class="container">
         <div class="row">
 
+
+        @foreach ($products as $product)
         <div class="col-4 text-center">
-            <a href="{{route('products.detail',['product'=>'ffss eee'])}}" class="link-light">
-                <img src="https://feat.ws/uploads/posts/2021-02/1613159454_laptop2.jpg" class="w-100" alt="" >
-                <p class="mt-2 name mb-0">ffss eee</p>
-                <p style="color: rgb(104, 98, 98)">34 566.33 $</p>
+            <a href="{{route('products.detail',['product'=>$product])}}" class="link-light">
+                <img src="{{$product->image}}" class="w-100" alt="" >
+                <p class="mt-2 name mb-0">{{$product->name}}</p>
+                <p style="color: rgb(104, 98, 98)">{{$product->price}} $</p>
             </a>
             
        </div>
-       <div class="col-4 text-center">
-        <a href="{{route('products.detail',['product'=>'ffss eee'])}}" class="link-light">
-            <img src="https://feat.ws/uploads/posts/2021-02/1613159454_laptop2.jpg" class="w-100" alt="" >
-            <p class="mt-2 name mb-0">ffss eee</p>
-            <p style="color: rgb(104, 98, 98)">34 566.33 $</p>
-        </a>
+        @endforeach
         
-      </div>
-      <div class="col-4 text-center">
-        <a href="{{route('products.detail',['product'=>'ffss eee'])}}" class="link-light">
-            <img src="https://feat.ws/uploads/posts/2021-02/1613159454_laptop2.jpg" class="w-100" alt="" >
-            <p class="mt-2 name mb-0">ffss eee</p>
-            <p style="color: rgb(104, 98, 98)">34 566.33 $</p>
-        </a>
-        
-      </div>
+   
+    
     </div>
 
 </div>

@@ -14,15 +14,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::group(["namespace"=>"App\Http\Controllers"],function () {
+    
+    Route::get('/',"ProductController@show");
+    Route::get('/products/{product}', "ProductController@get")->name("products.detail");
+    Route::get('/products', "ProductController@getByCategory")->name('products.category');
+
 });
 
 
-Route::get('/products/{product}', function ($product) {
-    return view('product',["product"=>$product]);
 
-})->name("products.detail");
+
 
 Route::get('/login', function () {
   
@@ -52,6 +54,3 @@ Route::get('/cart', function () {
 
 
 
-Route::get('/products', function (Request $category) {
-    return view('products',["category"=>$category->query('category')]);
-})->name('products.category');
