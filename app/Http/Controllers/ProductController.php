@@ -17,8 +17,11 @@ class ProductController extends Controller
 
     public function get($product)
     {
-         
-        return view('product',["product"=>Product::find($product)]);
+        $product = Product::find($product);
+        
+          $products=$product->category->products->where("id","!=",$product->id);
+
+        return view('product',["product"=>$product,"products"=>$products]);
     
     }
    
@@ -31,10 +34,8 @@ class ProductController extends Controller
 
             }
             else{
-                $products = Product::all();
-                     
-              dd( $products->categories);
-                return view('products',["category"=>Category::all(),"c"=>$category->query("category"),"products"=>  $products]);
+                $category = Category::find($category);
+                return view('products',["category"=>Category::all(),"c"=>$category[0]->name,"products"=>  $category[0]->products]);
 
             }
     

@@ -2,24 +2,30 @@
 
 
 @section('content')
-
-    <div class="container">
-        <h4 >1 item(s) in Shopping Cart</h4>
+   
+   <div class="container">
+        <h4 >{{Cart::count()}} item(s) in Shopping Cart</h4>
+        @include('alert.success')
+        @include('alert.error')
+       
         <table class="table mt-4">
             <tbody>
+
+
+                @foreach ($cart as $c)
                 <tr>
                     <td>
                         <div class="d-flex">
-                            <img src="https://feat.ws/uploads/posts/2021-02/1613159454_laptop2.jpg" class="prod" alt="">
+                            <img src="{{$c->model->image}}" class="prod" alt="">
                              <div class="ml-3">
-                                <p class="mt-2 name mb-0">ffss eee</p>
-                                <p style="color: rgb(104, 98, 98)">34 566.33 $</p>
+                                <p class="mt-2 name mb-0">{{$c->name}}</p>
+                                <p style="color: rgb(104, 98, 98)">{{$c->model->price}} </p>
                              </div>
                         </div>
                     </td>
                     <td>
                        
-                           <a href="">remove</a>
+                           <a href="{{route('cart.remove',$c->rowId)}}">remove</a>
                            <a href="">save later</a>
                     
                     </td>
@@ -36,47 +42,15 @@
                     </td>
                     
                     <td>
-                        2345 55 $
+                        {{$c->subtotal}} DA
                     </td>
 
 
 
                 </tr>
-                <tr>
-                    <td>
-                        <div class="d-flex">
-                            <img src="https://feat.ws/uploads/posts/2021-02/1613159454_laptop2.jpg" class="prod" alt="">
-                             <div class="ml-3">
-                                <p class="mt-2 name mb-0">ffss eee</p>
-                                <p style="color: rgb(104, 98, 98)">34 566.33 $</p>
-                             </div>
-                        </div>
-                    </td>
-                    <td>
-                       
-                           <a href="">remove</a>
-                           <a href="">save later</a>
-                    
-                    </td>
-                    <td>
-                       
-                      <form action="">
-                        <select name="" id="">
-                            <option value="">1</option>
-                            <option value="">2</option>
-                            <option value="">3</option>
-                        </select>
-                      </form>
-                 
-                    </td>
-                    
-                    <td>
-                        2345 55 $
-                    </td>
-
-
-
-                </tr>
+                   
+              @endforeach        
+            
             </tbody>
         </table>
 
@@ -99,17 +73,17 @@
             
             <div class="d-flex">
                 <h5 class="mr-2">Sub Total</h5>
-                <p>3 440 DA</p>
+                <p>{{Cart::Subtotal()}} DA</p>
             </div>
 
            <div class="d-flex">
               <h5 class="mr-2">Tax</h5>
-              <p>3 440 DA</p>
+              <p>{{Cart::tax()}} DA</p>
            </div>
          
            <div class="d-flex">
             <h5 class="mr-2">Total</h5>
-            <p>3 440 DA</p>
+            <p>{{Cart::total()}} DA</p>
          </div>
  
 

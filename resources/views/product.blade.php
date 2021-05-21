@@ -9,7 +9,10 @@
         <p  class="d-inline"> <a href="{{route('products.category',['category'=>'all'])}}">Shop</a> > {{$product->name}} </p>
     </div>
 
-    <div class="row">
+     @include('alert.success')
+     @include('alert.error')
+    
+     <div class="row">
         
         <div class="col-6 mt-5">
             <img src="{{$product->image}}" class="w-100" alt="" >
@@ -29,25 +32,29 @@
 
             @endif
 
-           <p style="font-size: 1.5em"><b>233 44.45 $</b></p>
+           <p style="font-size: 1.5em"><b>{{$product->price}}</b></p>
             
            <p class="mt-3">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. In, itaque?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic pariatur rerum quasi, maiores dolorem magni reprehenderit!
+            {{$product->descriptiion}}
            </p>
-        <form action="">
-            <button type="submit" class="container btn btn-outline-info">ADD TO CART</button>
-        </form>
+        
+           <form action="{{route('cart.store')}}" method="POST">
+                @csrf
+                <input type="hidden" name="id" value="{{$product->id}}">
+               <button type="submit" class="container btn btn-outline-info">ADD TO CART</button>
+          </form>
+
         </div>
     </div>
   
 </div>
-{{-- 
+ 
     <div class="container mt-5">
       <h1 class="mb-4">you might also like ...</h1>
         
           @include('layout.product')
 
         
-    </div> --}}
+    </div>
 
 @endsection

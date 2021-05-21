@@ -20,6 +20,16 @@ Route::group(["namespace"=>"App\Http\Controllers"],function () {
     Route::get('/products/{product}', "ProductController@get")->name("products.detail");
     Route::get('/products', "ProductController@getByCategory")->name('products.category');
 
+    //****************************  $$ cart crud $$ *********************
+
+
+    Route::post('/cart/store', "CartController@store")->name('cart.store');
+    Route::get('/cart',"CartController@index")->name("cart");
+    Route::get('/cart/{id}/remove',"CartController@remove")->name("cart.remove");
+
+
+    
+
 });
 
 
@@ -46,11 +56,7 @@ Route::get('/checkout', function () {
 })->name("checkout");
 
 
-Route::get('/cart', function () {
-  
-    return view('cart');
 
-})->name("cart");
 
 
 

@@ -14,9 +14,14 @@ class Product extends Model
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
-    public function categories()
+    public function category()
     {
-        return $this->belongsToMany(Category::class,"products_categories","product_id");
+        return $this->belongsTo(Category::class);
+    }
+
+
+    public function getPriceAttribute($number){
+          return number_format($number, 2, ',', ' ') . ' DA';
     }
 
 

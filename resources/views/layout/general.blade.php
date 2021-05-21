@@ -27,7 +27,7 @@
                     <a class="nav-link " href="/register" tabindex="-1" aria-disabled="true"><i class="fa fa-user-circle-o"></i> register</a>
                 </li>
                 <li class="nav-item ml-4 ">
-                    <a class="nav-link " href="/cart" tabindex="-1" aria-disabled="true"><span class="badge badge-danger">0</span><i class="fa fa-shopping-cart" style="font-size: 24px;"></i> </a>
+                    <a class="nav-link " href="/cart" tabindex="-1" aria-disabled="true"><span class="badge badge-danger">{{Cart::count()}}</span><i class="fa fa-shopping-cart" style="font-size: 24px;"></i> </a>
                 </li>
             </ul>
         </div>

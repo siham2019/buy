@@ -21,7 +21,7 @@
                     
                     @foreach ($category as $item)
                       <li class="my-2">
-                          <a href="{{route('products.category',['category'=>$item->name])}}">{{$item->name}}</a>
+                          <a href="{{route('products.category',['category'=>$item->id])}}">{{$item->name}}</a>
                       </li>
                     @endforeach
                   
